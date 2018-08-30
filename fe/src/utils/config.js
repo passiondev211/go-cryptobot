@@ -2,7 +2,7 @@
 // export const apiUrl =  __DEV__ ? 'http://localhost:9512/api/v1' : 'https://api.profitcoins.io/api/v1'; //eslint-disable-line
 //export const apiUrl = 'https://app.profitcoins.io/api/v1'; //eslint-disable-line
 //export const referApiUrl = 'https://profitcoins.io/wp-json/pcr/v1/user';
-const domain = __DOMAIN__ || 'dev.profitcoins.io'; //eslint-disable-line
+const domain = __DOMAIN__ || 'profitcoins.io'; //eslint-disable-line
 
 var _apiUrl;
 if(__DEV__) {
