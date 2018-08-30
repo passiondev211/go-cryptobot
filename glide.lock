@@ -1,0 +1,89 @@
+hash: a6faeaea6f7c5cdac34e61912b36c4ccf6c1cf7a8a26a67de36b5f6d4d702999
+updated: 2018-07-20T02:23:51.134392372+07:00
+imports:
+- name: github.com/dgrijalva/jwt-go
+  version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
+- name: github.com/gin-contrib/sse
+  version: 22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae
+- name: github.com/gin-contrib/static
+  version: 73da7037e716e63aa2b0ffceb630dfa7be299086
+- name: github.com/gin-gonic/gin
+  version: d459835d2b077e44f7c9b453505ee29881d5d12d
+  subpackages:
+  - binding
+  - render
+- name: github.com/go-sql-driver/mysql
+  version: 02eb68a684ce8ccb467a8280c5b51232d44643b9
+- name: github.com/golang/protobuf
+  version: b4deda0973fb4c70b50d226b1af49f3da59f5265
+  subpackages:
+  - proto
+- name: github.com/itsjamie/gin-cors
+  version: 97b4a9da79331dfa2b6d35f4cdd1e50f5148859c
+- name: github.com/jinzhu/gorm
+  version: 6ed508ec6a4ecb3531899a69cbc746ccf65a4166
+  subpackages:
+  - dialects/mysql
+- name: github.com/jinzhu/inflection
+  version: 1c35d901db3da928c72a72d8458480cc9ade058f
+- name: github.com/mattn/go-isatty
+  version: 6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c
+- name: github.com/orange-cloudfoundry/ipfiltering
+  version: f48f1b767f82b3a86b9747064efa5455a95e45e4
+- name: github.com/pkg/errors
+  version: 645ef00459ed84a119197bfb8d8205042c6df63d
+- name: github.com/remeh/sizedwaitgroup
+  version: 5582a674300c427060d06980c142aeb52ed20040
+- name: github.com/robfig/cron
+  version: b41be1df696709bb6395fe435af20370037c0b4c
+- name: github.com/rubenv/sql-migrate
+  version: 081fe17d19ff4e2dd9f5a0c1158e6bcf74da6906
+  subpackages:
+  - sqlparse
+- name: github.com/sirupsen/logrus
+  version: c155da19408a8799da419ed3eeb0cb5db0ad5dbc
+- name: github.com/ugorji/go
+  version: b4c50a2b199d93b13dc15e78929cfb23bfdf21ab
+  subpackages:
+  - codec
+- name: github.com/xeipuuv/gojsonpointer
+  version: 4e3ac2762d5f479393488629ee9370b50873b3a6
+- name: github.com/xeipuuv/gojsonreference
+  version: bd5ef7bd5415a7ac448318e64f11a24cd21e594b
+- name: github.com/xeipuuv/gojsonschema
+  version: 8bcffc811467a5f691810420385be6e66b35a317
+- name: golang.org/x/crypto
+  version: 91a49db82a88618983a78a06c1cbd4e00ab749ab
+  subpackages:
+  - ssh/terminal
+- name: golang.org/x/sys
+  version: dd2ff4accc098aceecb86b36eaa7829b2a17b1c9
+  subpackages:
+  - unix
+  - windows
+- name: google.golang.org/appengine
+  version: 5bee14b453b4c71be47ec1781b0fa61c2ea182db
+  subpackages:
+  - cloudsql
+- name: gopkg.in/go-playground/validator.v8
+  version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
+- name: gopkg.in/gorp.v1
+  version: c87af80f3cc5036b55b83d77171e156791085e2e
+- name: gopkg.in/natefinch/lumberjack.v2
+  version: a96e63847dc3c67d17befa69c303767e2f84e54f
+- name: gopkg.in/yaml.v2
+  version: 5420a8b6744d3b0345ab293f6fcba19c978f1183
+testImports:
+- name: github.com/davecgh/go-spew
+  version: 8991bc29aa16c548c550c7ff78260e27b9ab7c73
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: 792786c7400a136282c1664665ae0a8db921c6c2
+  subpackages:
+  - difflib
+- name: github.com/stretchr/testify
+  version: b89eecf5ca5db6d3ba60b237ffe3df7bafb7662f
+  subpackages:
+  - assert
+  - require

@@ -1,0 +1,9 @@
+cors
+
+api.{$DOMAIN}:443 {
+  proxy / cryptobot:9512
+}
+
+app.{$DOMAIN}:443 {
+  root /frontend
+}

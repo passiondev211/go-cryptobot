@@ -1,0 +1,324 @@
+@import "node_modules/normalize.css/normalize";
+@import "node_modules/susy/sass/susy";
+@import "node_modules/susy/sass/plugins/svg-grid";
+@import "node_modules/react-toastify/dist/ReactToastify";
+
+@import '~react-joyride/lib/react-joyride';
+@import 'vars';
+@import 'mixins';
+@import 'layout';
+@import 'invest-modal';
+@import 'user-panel';
+@import 'exchange-rate-pair';
+@import 'trade-record';
+@import 'header';
+@import 'radar-animation';
+@import 'win-animation';
+@import 'lose-animation';
+@import 'buying-animation';
+@import 'selling-animation';
+@import 'tour-language-modal';
+@import "joyride";
+@import "fonts";
+@import "toast";
+@import "react-datetime";
+@import "refer-page";
+
+
+html.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+body {
+  background: $pageBackgroundColor;
+  font-family: $mainFont;
+  color: $darkColor;
+  font-size: $baseFontSize;
+}
+
+.page-text {
+  text-align: center;
+  color: $darkColor;
+}
+
+.text {
+  font-style: normal;
+  line-height: normal;
+
+  &_lite {
+    font-weight: 200;
+  }
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.underlined {
+  text-decoration: underline !important;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn {
+  border-radius: 24px;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 19px;
+  font-family: $mainFont;
+  text-align: center;
+  color: $whiteColor;
+  padding: 0 0 2px 0;
+  min-width: 174px;
+  max-width: 174px;
+  white-space: nowrap;
+  white-space: pre;
+  user-select: none;
+  height: 49px;
+  &_language {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 0;
+    margin: 0 .5em 0 0;
+    font-family: inherit;
+    text-transform: none;
+    letter-spacing: .1em;
+    font-size: .8em;
+    line-height: 1em;
+    padding: .75em 0.4em 0;
+    min-width: initial;
+    max-width: initial;
+    background-color: transparent;
+    color: $darkBlueColor;
+  }
+
+  &_green {
+    background-color: $greenColor;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $greenColor;
+      color: $greenColor;
+    }
+  }
+
+  &_blue {
+    background-color: $blueColor2;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $blueColor2;
+      color: $blueColor2;
+    }
+  }
+
+  &_long-text {
+    padding: 10px 0;
+  }
+
+  &_orange {
+    background-color: $orangeColor;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $orangeColor;
+      color: $orangeColor;
+    }
+  }
+}
+
+.button-disabled {
+  background: transparent;
+  filter: grayscale(100%);
+  cursor: default !important;
+
+  &:hover {
+    background: #fff;
+  }
+}
+
+.navigation {
+  border-top: 1px solid $linesColor;
+  height: 70px;
+  &__btn {
+    user-select: none;
+    color: $lightColor;
+    text-decoration: none;
+    transition: color .50s ease-in;
+    &_selected {
+      border-top: 3px solid $blueColor;
+      color: $darkColor;
+    }
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.page-bg {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 30px #E4EAEF;
+}
+
+.page-title {
+  font-weight: 500;
+  font-size: 18px;
+  color: $darkColor;
+}
+
+.trades-table {
+  th {
+    font-weight: bold;
+    font-size: 14px;
+    color: $lightColor;
+    border-bottom: 1px solid $linesColor;
+  }
+  tr:not(:last-child) > td {
+    border-bottom: 1px solid $linesColor;
+  }
+}
+
+.currency-icon {
+  display: inline-block;
+  &_ltc {
+    @include attachImage('/img/currency_ltc', 18px, 18px);
+  }
+  &_bch {
+    @include attachImage('/img/currency_bch', 18px, 18px);
+  }
+  &_eth {
+    @include attachImage('/img/currency_eth', 18px, 18px);
+  }
+  &_dash {
+    @include attachImage('/img/currency_dash', 18px, 18px);
+  }
+  &_bccoin {
+    @include attachImage('/img/currency_bccoin', 18px, 18px);
+  }
+  &_xmr {
+    @include attachImage('/img/currency_xmr', 18px, 18px);
+  }
+  &_xrp {
+    @include attachImage('/img/currency_xrp', 18px, 18px);
+  }
+  &_bcc {
+    @include attachImage('/img/currency_bcc', 18px, 18px);
+  }
+  &_zec {
+    @include attachImage('/img/currency_zec', 18px, 18px);
+  }
+  &_etc {
+    @include attachImage('/img/currency_etc', 18px, 18px);
+  }
+}
+
+.currency-text {
+  font-weight: bold;
+  font-size: 16px;
+  color: $darkColor;
+}
+
+.currency-name {
+  vertical-align: top;
+  padding-left: 13px;
+}
+
+.currency-date {
+  font-weight: 500;
+  font-size: 14px;
+  color: $lightColor;
+}
+
+.currency-profit {
+  font-weight: 500;
+  font-size: 18px;
+  text-align: right;
+  color: $darkColor;
+  &_positive {
+    color: $greenColor;
+  }
+}
+
+.burger-menu {
+  background-image: $burger-icon;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.status {
+  /* Selling Ripple to Bittrex */
+  &__header {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    color: #0B3B5B;
+  }
+  &__expected {
+    /* Expected Profit: 1,5025600 BTC */
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    color: #717E9E;
+  }
+  &_analyze {
+    @include attachImage("/img/analyze", 184px, 182px);
+  }
+  &_analyze-canceled {
+    @include attachImage("/img/analyze", 184px, 182px);
+  }
+  &_buying {
+    @include attachImage("/img/buy", 42px, 22px);
+  }
+  &_selling {
+    @include attachImage("/img/sell", 100px, 60px);
+  }
+  &_success {
+    @include attachImage("/img/success", 40px, 78px);
+  }
+  &_unsuccess {
+    @include attachImage("/img/unsuccess", 40px, 78px);
+  }
+}
+
+.btn[disabled] {
+  opacity: 0.5;
+}
+
+div.profit {
+  height: 200px;
+  color: $blueColor2;
+
+  > svg {
+    height: 100%;
+  }
+}
+
+p {
+  &.profit {
+    font-size: 24px;
+    color: $blueColor2;
+    margin-bottom: 0;
+  }
+
+  &.balance,
+  &.leverage {
+    font-size: 24px;
+  }
+}
+
+.form-control{
+  height: 45px;
+  border: 1px solid #e5e5e5;
+  color: #717e9e;
+}
+
+@import "media";

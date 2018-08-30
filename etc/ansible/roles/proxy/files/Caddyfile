@@ -1,0 +1,14 @@
+*:443
+
+proxy / localhost:9512
+tls {
+    max_certs 10
+}
+
+# Use a certificate with a concrete name to avoid browser warning about an unsecure certificate.
+# host yieldcoin.com:80 yieldcoin.com:443 {
+#      proxy / localhost:9512
+#      tls {
+#          max_certs 10
+#      }
+# }

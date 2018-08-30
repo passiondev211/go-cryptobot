@@ -1,0 +1,398 @@
+$susy: ( columns: susy-repeat(12),
+/* Tells Susy to use border-box */
+
+global-box-sizing: border-box, gutters: 0);
+.user-panel {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 113px 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.page {
+  margin: 0 auto;
+}
+
+.page-wrapper {
+  width: 100%;
+  padding-bottom: 31px;
+}
+
+.page-title {
+  padding-left: 49px;
+  padding-top: 42px;
+}
+
+.trades-table {
+  width: 100%;
+  margin-top: 36px;
+  th {
+    padding-left: 7px;
+    vertical-align: top;
+    box-sizing: border-box;
+    height: 42px;
+    text-align: left;
+    &:first-child {
+      padding-left: 50px;
+      box-sizing: border-box;
+      height: 42px;
+      vertical-align: top;
+      text-align: left;
+      width: 287px;
+    }
+    &:nth-child(2) {
+      width: 154px;
+    }
+    &:nth-child(3) {
+      text-align: right;
+      padding-right: 50px;
+    }
+  }
+  td {
+    padding-left: 10px;
+    height: 73px;
+    box-sizing: border-box;
+    &:first-child {
+      padding-left: 49px;
+      padding-top: 8px;
+    }
+    &:last-child {
+      padding-right: 49px;
+    }
+  }
+}
+
+.account-data {
+  width: 193px;
+  text-align: right;
+  &__demo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 13px;
+  }
+  &__question {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 7px;
+  }
+  &__name-text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__price {
+    &_border_bottom {
+      padding-bottom: 4px;
+    }
+    &_left {
+    //  right: -63px;
+    //  top: 37px;
+    }
+    &_right {
+    //  left: 0;
+    //  right: auto;
+    //  top: 33px;
+    }
+  //  padding-right: 67px;
+  //  float: left;
+  //  position: absolute;
+  //  top: 10px;
+  //  right: 39px;
+  }
+  &__btn {
+  //  margin-top: 69px;
+  }
+  &__price-text {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  &__price-btn {
+    vertical-align: bottom;
+    margin-bottom: 9px;
+    &:nth-of-type(1) {
+      margin-left: 21px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 13px;
+    }
+  }
+  &_big {
+    width: 200px;
+  }
+  &_align {
+    &_left {
+      display: inline-block;
+      text-align: right;
+      &__demo {
+        margin-left: 13px;
+      }
+      &__question {
+        margin-left: 7px;
+      }
+      &__price {
+        padding-left: 5px;
+      }
+      &__btn {
+        margin-left: 2px;
+      }
+    }
+    &_right {
+      display: inline-block;
+      text-align: left;
+      &__demo {
+        margin-right: 13px;
+      }
+      &__question {
+        margin-left: 7px;
+      }
+      &__price {
+        padding-right: 5px;
+      }
+      &__btn {
+        margin-right: 2px;
+      }
+    }
+  }
+}
+
+.profit {
+  text-align: center;
+
+  $chartWidth: 200px;
+
+  &__chart {
+    margin: 19px auto 0;
+    width: $chartWidth;
+    height: $chartWidth;
+  }
+  &__circle {
+    width: $chartWidth;
+    height: $chartWidth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  &__inside-circle {
+    width: $chartWidth - 20;
+    height: $chartWidth - 20;
+    box-sizing: border-box;
+    z-index: 99;
+  }
+  &__indicator {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    z-index: 0;
+  }
+  &__margin-label {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+  }
+  &__margin-value {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 78px;
+    bottom: 0;
+  }
+}
+
+.text {
+  &_currency {
+    padding-left: 6px;
+  }
+}
+
+.navigation {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(163, 163, 163, 0.25);
+
+  &__btn {
+    height: 100%;
+    width: 22.75%;
+    box-sizing: border-box;
+    padding-top: 25px;
+    float: left;
+
+    &_selected {
+      margin-top: -1px;
+      padding-top: 23px;
+    }
+
+    &:first-child {
+      float: left;
+      margin-left: 15.85%;
+    }
+
+    &:last-child {
+      float: right;
+      margin-right: 15.85%;
+    }
+  }
+}
+
+.page-text {
+  padding-top: 38px;
+  line-height: 8px;
+  margin: 0 auto 54px;
+}
+
+.card {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 30px #e4eaef;
+  box-shadow: 0 0 30px #e4eaef;
+  border: 0;
+  border-radius: 0;
+  margin: auto;
+}
+
+.card-body {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.card-arrow {
+  width: 29px;
+  background-size: 29px 8px;
+  height: 8px;
+  background-image: url(../img/arrow.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 90px;
+  left: 210px;
+
+  @media (max-width: 991px) {
+    left: 95%;
+  }
+
+  @media (max-width: 576px) {
+    left: 150px;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    background-image: url(../img/arrow@2x.png);
+  }
+}
+
+.bdl1 {
+  border-left: 1px solid #ccc;
+}
+
+
+.dashboard-card {
+  .buyat, .sellto {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .buyat {
+    color: $blueColor;
+  }
+  .sellto {
+    color: $redColor;
+  }
+  .card-title {
+    font-size: 12px;
+  }
+  .value {
+    font-size: 12px;
+  }
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  &__logo {
+    margin-left: 13.4%;
+  }
+  &__tradecoins {
+    &:before {
+      margin-right: 11px;
+      margin-top: 1px;
+    }
+    &:after {
+      margin-left: 16px;
+    }
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    width: 150px;
+    height: 38px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  &__tradecoins-menu {
+    width: 250px;
+    height: 138px;
+    position: absolute;
+    z-index: 100;
+    margin-top: 29px;
+    left: -50px;
+    &_hidden {
+      display: none;
+    }
+  }
+  &__user-menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    margin-right: 1.65%;
+    &:after {
+      margin-left: 5px;
+    }
+  }
+  &__user-menu-block {
+    position: absolute;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // height: 125px;
+    &_hidden {
+      display: none !important;
+    }
+    &_mobile {
+      display: none;
+    }
+  }
+  &__user-menu-item {
+    padding: 12px;
+  }
+  &__language-selector {
+    display: flex;
+    align-items: center;
+    margin-right: 13.68%;
+  }
+  &__language-arrow {
+    margin-left: 5px;
+  }
+}
+
+.burger-menu {
+  display: none;
+}
+
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  flex-direction: column;
+}

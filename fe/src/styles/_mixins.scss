@@ -1,0 +1,91 @@
+// clearfix
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: ' ';
+    display: table;
+  }
+}
+
+
+// overall container mixin
+@mixin container(
+  $width: all,
+  $config: $susy,
+  $debug: false
+) {
+  $config: susy-settings($config);
+  $container-spread: map-get($config, 'container-spread');
+  $width: span($width $container-spread of $container-spread, $config);
+  
+  @include clearfix;
+  margin: 0 auto;
+  max-width: $width or 100%;
+  
+  @if $debug {
+    background: susy-svg-grid($grid: $config) no-repeat scroll;
+  }
+}
+
+
+// Span Mixin
+// ----------
+@mixin span(
+  $span,
+  $config: $susy
+) {
+  width: span($span, $config);
+  
+  @if index($span, 'last') {
+    float: right;
+    // margin-right: 0; if you want an explicit reset
+  } @else {
+    float: left;
+    margin-right: gutter();
+  }
+}
+
+@mixin center ($columns, $elementColumns) {
+  $margin: (($columns) - $elementColumns)/2;
+  margin-left: span($margin wide of $columns);
+}
+
+@mixin text($color, $font, $size, $weight) {
+  color: $color;
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin attachImage($imageUrlWithoutExtension, $imageWidth: null, $imageHeight: null,  $imageExtension: '.png') {
+  @if ($imageWidth) {
+    width: $imageWidth;
+    @if($imageHeight) {
+      background-size: $imageWidth $imageHeight;
+    }
+  }
+  @if ($imageHeight) {
+    height: $imageHeight;
+  }
+
+  background-image: url($imageUrlWithoutExtension + $imageExtension);
+  background-repeat: no-repeat;
+  @media
+  (-webkit-min-device-pixel-ratio: 1.25), 
+  (min-resolution: 120dpi){
+    background-image: url($imageUrlWithoutExtension + '@2x' + $imageExtension);
+  }
+  /* 1.5 dpr */
+  @media
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi){
+    background-image: url($imageUrlWithoutExtension + '@3x' + $imageExtension);
+  }
+}
+
+@mixin attachArrow() {
+  background-image: $arrow-down-icon;
+  width: 9px;
+  height: 6px;
+  background-size: 9px 6px;
+}

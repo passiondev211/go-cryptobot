@@ -1,0 +1,10 @@
+---
+# TODO: Change it to wherever you put your repository access private key.
+app_repo_key_file: /home/centos/.ssh/id_rsa
+
+db_host: localhost
+db_port: 3306
+db_user: cryptobot
+db_password: "QSdCeB.s2bGSer4o;AFsk3jA"
+db_database: cryptobot_staging
+db_root_password: "36s3pgsnEeMT5N4l:pmG4wJP"

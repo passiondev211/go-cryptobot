@@ -1,0 +1,48 @@
+
+
+.profit-toast{
+  &.toastify{
+    width: auto;
+    max-width: 500px;
+  }
+
+  &.toastify--top-center{
+    top: 0;
+    padding: 0;
+    z-index: 1000;
+
+    .toastify-content{
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+      padding: 9px 20px 9px 56px;
+      position: relative;
+      &:before{
+        content: '';
+        width: 36px;
+        height: 36px;
+        left: 12px;
+        top: 6px;
+        position: absolute;
+        background-image: url("../img/toaster-icons.png");
+      }
+      &--error{
+         background: #eb2750;
+         &:before{
+           background-position: -72px 0;
+         }
+       }
+      &--success{
+        background: #3cc23a;
+        &:before{
+          background-position: 0 0;
+        }
+      }
+      &--warning{
+        background: #ea802b;
+        &:before{
+          background-position: -36px 0;
+        }
+      }
+    }
+  }
+}

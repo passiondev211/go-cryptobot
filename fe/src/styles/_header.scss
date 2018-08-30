@@ -1,0 +1,136 @@
+.header {
+  position: relative;
+  background: $whiteColor;
+  box-shadow: 0 1px 5px rgba(164, 164, 164, 0.25);
+
+  .navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+
+    &-brand {
+      display: inline-block;
+      margin-right: 1rem;
+      font-size: 1.25rem;
+      line-height: inherit;
+      white-space: nowrap;
+      @include attachImage('/img/logo', 177px, 41px);
+      background-size: contain;
+    }
+
+    &-collapse {
+      flex-grow: initial;
+    }
+  }
+}
+
+.navbar {
+  .faq-link-wrapper {
+    border-right: 1px solid #ccc;
+    margin-right: 10px;
+
+    .dropdown-item {
+      &:hover {
+        background: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #343a40;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  outline: none !important;
+}
+
+ul.mobile-menu-links {
+  padding: 0;
+  list-style-type: none;
+
+  > li {
+    > a {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      display: block;
+      color: white;
+      padding-left: 20px;
+    }
+
+    > .mobile-sub-menu > li {
+      display: block;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      color: white;
+
+      > a {
+        display: block;
+        color: white;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  li .mobile-sub-menu {
+    list-style: none;
+    padding: 0 0 20px;
+  }
+}
+
+.mobile-menu-container {
+  display: none;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  background: #0b487e;
+  width: 300px;
+  z-index: 999999;
+  padding: 30px 0;
+  box-shadow: -10px 15px 21px 0 rgba(0, 0, 0, .35);
+
+  &.show-menu {
+    display: block;
+    overflow-y: scroll;
+
+    &.no-margin-top {
+      top: 0;
+    }
+  }
+}
+
+.topbar {
+  background-color: $blueColor2;
+  font-size: $baseFontSize - 2;
+  color: #FFF;
+  padding: 2px 8px 5px;
+  text-align: center;
+}

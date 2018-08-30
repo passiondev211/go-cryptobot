@@ -1,0 +1,19 @@
+---
+- name: install
+  yum:
+    name: caddy
+    update_cache: yes
+    state: present
+
+- name: copy Caddyfile
+  copy:
+    src: Caddyfile
+    dest: /etc/caddy/caddy.conf
+    mode: 0444
+
+- service:
+    name: caddy
+    state: restarted
+- service:
+    name: caddy
+    state: started

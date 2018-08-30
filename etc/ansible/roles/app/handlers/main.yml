@@ -1,0 +1,10 @@
+---
+- name: restart cryptobot
+  service:
+    name: cryptobot
+    state: restarted
+
+- name: start cryptobot
+  service:
+    name: cryptobot
+    state: started

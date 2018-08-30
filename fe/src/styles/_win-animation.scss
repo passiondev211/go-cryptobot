@@ -1,0 +1,120 @@
+    // Variables
+    $textColor: rgb(113, 126, 158);
+    $mainColor: #52D336;
+    $coinBorderColor: darken( saturate( adjust-hue( $mainColor, 1deg), 6), 8);
+    $tailMainColor: lighten( saturate( $mainColor, 14), 4);
+    $mainTime: 0.5s;
+    $levitationTime: 3s;
+    $sumLevitaionItteration: 2;
+    $allAnimationTime: $levitationTime+($mainTime*4)*$sumLevitaionItteration; // Bet-win layout
+    .bet-win {
+        max-width: 500px;
+        margin: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 250px;
+        height: 150px;
+
+        @media (max-width: 575px) {
+            margin-top: 30px;
+        }
+
+        .coin {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            animation: win-slideDown $mainTime 1 forwards, win-levitation $levitationTime $mainTime*4 $sumLevitaionItteration forwards;
+            &-tail {
+                position: absolute;
+                bottom: 2px;
+                left: 2px;
+                animation: win-pulse $mainTime infinite forwards;
+            }
+            &-body {
+                position: relative;
+                z-index: 1;
+            }
+        }
+        svg {
+            .inner-circle {
+                fill: $mainColor;
+            }
+            .border-circle {
+                fill: $coinBorderColor;
+            }
+            .tail-color {
+                stop-color: $tailMainColor;
+            }
+        }
+        .hidden-container {
+            margin: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: win-hideEnd $mainTime $allAnimationTime 1 forwards;
+        }
+        .bet-difference {
+            color: $mainColor;
+            font-family: $mainFont;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            animation: win-slideUp $mainTime 1 forwards;
+        }
+        .bet-info {
+            color: $textColor;
+            font-family: $mainFont;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        @keyframes win-slideUp {
+            0% {
+                transform: translate3d(0, 150%, 0);
+                opacity: 0;
+            }
+            100% {
+                transform: translate3d(0, 0%, 0);
+                opacity: 1;
+            }
+        }
+        @keyframes win-levitation {
+            0% {
+                transform: translate3d(0, -10%, 0);
+            }
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        @keyframes win-pulse {
+            0% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes win-slideDown {
+            0% {
+                transform: translate3d(0, -150%, 0);
+                opacity: 0;
+            }
+            100% {
+                transform: translate3d(0, 0%, 0);
+                opacity: 1;
+            }
+        }
+        @keyframes win-hideEnd {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    }

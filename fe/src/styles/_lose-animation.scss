@@ -1,0 +1,121 @@
+   // Variables
+   $textColor: rgb(113, 126, 158);
+   $mainColor: #E66A32;
+   $coinBorderColor: darken( desaturate( adjust-hue( $mainColor, -9deg), 6), 3);
+   $tailMainColor: lighten( saturate( $mainColor, 18), 12);
+   $mainTime: 0.5s;
+   $levitationTime: 3s;
+   $sumLevitaionItteration: 2;
+   $allAnimationTime: $levitationTime+($mainTime*4)*$sumLevitaionItteration;
+   .bet-lose {
+       max-width: 500px;
+       margin: auto;
+       position: relative;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       width: 250px;
+       height: 150px;
+
+       @media (max-width: 575px) {
+           margin-top: 30px;
+       }
+
+       .coin {
+           position: relative;
+           display: flex;
+           flex-direction: column;
+           margin-bottom: 30px;
+           animation: lose-coinSlide $mainTime 1 forwards, lose-levitation $levitationTime $mainTime*4 $sumLevitaionItteration forwards;
+           &-tail {
+               position: absolute;
+               top: 2px;
+               left: 2px;
+               animation: lose-pulse $mainTime infinite forwards;
+           }
+           &-body {
+               position: relative;
+               z-index: 1;
+           }
+       }
+       svg {
+           .inner-circle {
+               fill: $mainColor;
+           }
+           .border-circle {
+               fill: $coinBorderColor;
+           }
+           .tail-color {
+               stop-color: $tailMainColor;
+           }
+       }
+       .hidden-container {
+           margin: auto;
+           position: relative;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           animation: lose-hideEnd $mainTime $allAnimationTime 1 forwards;
+       }
+       .bet-difference {
+           color: $mainColor;
+           font-family: $mainFont;
+           font-size: 16px;
+           font-weight: 600;
+           margin-bottom: 5px;
+           animation: lose-slideUp $mainTime 1 forwards;
+       }
+       .bet-info {
+           color: $textColor;
+           font-family: $mainFont;
+           font-size: 12px;
+           font-weight: 500;
+           max-width: 250px;
+       }
+       @keyframes lose-slideUp {
+           0% {
+               transform: translate3d(0, 150%, 0);
+               opacity: 0;
+           }
+           100% {
+               transform: translate3d(0, 0%, 0);
+               opacity: 1;
+           }
+       }
+       @keyframes lose-pulse {
+           0% {
+               opacity: 0.8;
+           }
+           100% {
+               opacity: 1;
+           }
+       }
+       @keyframes lose-coinSlide {
+           0% {
+               transform: translate3d(0, 400%, 0);
+               opacity: 0;
+           }
+           100% {
+               transform: translate3d(0, 0%, 0);
+               opacity: 1;
+           }
+       }
+       @keyframes lose-levitation {
+           0% {
+               transform: translate3d(0, -10%, 0);
+           }
+           100% {
+               transform: translate3d(0, 0, 0);
+           }
+       }
+       @keyframes lose-hideEnd {
+           0% {
+               opacity: 1;
+           }
+           100% {
+               opacity: 0;
+           }
+       }
+   }

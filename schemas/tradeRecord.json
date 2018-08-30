@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "TradeRecord": {
+      "description": "Information about trade",
+      "properties": {
+        "currency": {
+          "description": "Currency name",
+          "type": "string"
+        },
+        "buyPrice": {
+          "description": "Price for buying",
+          "type": "number"
+        },
+        "sellPrice": {
+          "description": "Price for selling",
+          "type": "number"
+        },
+        "exchangeName1": {
+          "description": "Exchange of buying",
+          "type": "string"
+        },
+        "exchangeName2": {
+          "description": "Exchange of selling",
+          "type": "string"
+        },
+        "amount": {
+          "description": "Amount",
+          "type": "number"
+        },
+        "profit": {
+          "description": "received profit from trade",
+          "type": "number"
+        },
+        "createdAt": {
+          "description": "Date and time of creation",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,388 @@
+/* page refer a friend */
+
+.block-title{
+  max-width: 500px;
+  margin: 0 auto;
+  color: #1175ba;
+  font-size: 20px;
+}
+
+.refer-page{
+  font-family:'Corporative', Roboto, sans-serif;
+  color: #7b87a4;
+
+  .page-bg{
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  .block-title{
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+
+  input[type="text"]{
+    box-sizing: border-box;
+    height: 45px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .btn{
+    box-sizing: border-box;
+    height: 45px;
+    border-radius: 8px;
+    min-width: 104px;
+    font-size: 14px;
+    &:hover{
+      opacity: .7;
+    }
+
+    &.btn-primary{
+      color: #fff;
+      background: #1175ba;
+    }
+
+    &.btn-orange{
+      color: #fff;
+      background: #f37544;
+    }
+
+    &.btn-share-round{
+      color: #717e9e;
+      font-size: 16px;
+      padding: 5px;
+      margin: 0 15px;
+      font-weight: normal;
+      .fa{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 10px;
+        &.fa-facebook{
+          background: #385699;
+        }
+
+        &.fa-twitter{
+          background: #4fabf0;
+        }
+
+        &.fa-google-plus{
+          background: #e12b25;
+        }
+      }
+    }
+  }
+
+
+  .mb-2{
+    margin-bottom: 20px;
+  }
+  .mb-3{
+    margin-bottom: 30px;
+  }
+}
+
+
+
+.refer-list{
+  padding: 30px 55px 12px 55px;
+  border-right: 1px solid #e8e8e8;
+  ul{
+    list-style: none;
+    padding-left: 55px;
+    text-align: left;
+  }
+
+  li{
+    max-width: 325px;
+    font-size: 18px;
+    display: block;
+    box-sizing: border-box;
+    padding-left: 45px;
+    margin-bottom: 18px;
+    position: relative;
+
+
+
+  }
+
+}
+
+.icon{
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/refer-icons.png") no-repeat 0 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  &.icon-link{
+    background-position: 0 0;
+  }
+  &.icon-bitcoin{
+    background-position: 0 -32px;
+  }
+  &.icon-gift{
+    background-position: 0 -64px;
+
+  }
+}
+
+.refer-list-center{
+  border-bottom: 1px solid #ebebeb;
+  border-top: 1px solid #ebebeb;
+  ul{
+    list-style: none;
+    margin: 0;
+    li{
+      position: relative;
+      list-style: none;
+      padding: 15px 20px 15px 45px;
+      text-align: left;
+      font-size: 15px;
+    }
+  }
+}
+
+
+.refer-control{
+  padding: 50px 55px 30px 55px;
+}
+
+.btn{
+  &.btn-share{
+    width: 32%;
+    max-width: 138px;
+    background: #efefef;
+    line-height: 46px;
+    text-align: left;
+    color: #fff;
+    height: 46px;
+    padding: 0 0 0 10px;
+    &:hover{
+      opacity: .7;
+    }
+
+    &.btn-facebook{
+      background: #3a5897;
+    }
+
+    &.btn-twitter{
+      background: #54aced;
+    }
+
+    &.btn-google-plus{
+      background: #df2e2e;
+    }
+
+    .fa{
+      float: right;
+      font-size: 1.75rem;
+      margin-top: 8px;
+      margin-right: 8px;
+      &.fa-google-plus{
+        width: 28px;
+        height: 28px;
+        content: '';
+        background: url("../img/google-plus.png") no-repeat 0 0;
+        &:before{
+          content: '';
+        }
+      }
+
+      &.fa fa-twitter{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+.ref-calendar {
+  position: relative;
+  margin: 75px auto;
+}
+
+.ref-calendar .datepicker{
+  background: url("../img/calendar.png") no-repeat right center;
+  width: 210px;
+  padding-left: 10px;
+  margin: auto;
+}
+
+.circle-block{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 10px solid #eaeff2;
+  text-align: center;
+  line-height: 120px;
+  position: relative;
+  display: inline-block;
+  margin: 0 30px 100px 30px;
+}
+
+.circle-block-value{
+  font-size: 40px;
+  font-weight: 300;
+  color: #1174ba;
+}
+.circle-block-value sup{
+  font-size: 20px;
+  top: -.75em;
+  font-weight: 500;
+}
+
+.circle-block-descr{
+  color: #45558a;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  bottom: 40px;
+  line-height: 12px;
+  width: 100%;
+  text-align: center;
+}
+.refer-chart-col{
+  padding: 0 50px;
+  margin-bottom: 50px;
+}
+.refer-chart{
+  height: 400px;
+}
+
+.chart-container{
+  position: relative;
+}
+
+@media all and (max-width: 768px){
+
+  .refer-page{
+    .page-bg{
+      padding: 50px 20px;
+    }
+  }
+
+  .refer-page .block-title{
+    padding: 0 30px;
+    margin-bottom: 30px;
+    font-weight: 500 !important;
+  }
+
+  .refer-page .form-group.mb-2{
+    margin-bottom: 25px !important;
+  }
+
+  .refer-list{
+    border-right: none;
+    padding: 30px 30px 0 30px;
+  }
+
+  .refer-list ul{
+    padding-left: 0;
+  }
+
+  .refer-list li{
+    font-size: 15px;
+  }
+
+  .refer-control{
+    padding: 30px 30px 0 30px;
+  }
+
+  .btn.btn-share{
+    margin: 0 5px;
+    min-width: 90px;
+  }
+
+  .ref-calendar .datepicker{
+    width: 100%;
+    max-width: 320px;
+    margin-top: 80px;
+  }
+
+  .circle-block{
+    width: 130px;
+    height: 130px;
+    border-width: 8px;
+    margin: 0 15px 50px 15px;
+    box-sizing: border-box;
+  }
+
+  .circle-block-value{
+    font-size: 36px;
+    line-height: 105px;
+  }
+
+  .circle-block-value sup{
+    font-size: 28px;
+  }
+
+  .circle-block-descr{
+    font-size: 10px;
+    bottom: 25px;
+  }
+
+  .refer-list-center{
+    ul{
+      padding-left: 0;
+    }
+  }
+}
+
+@media all and (max-width: 568px){
+  .refer-chart-col{
+    padding: 0 15px;
+  }
+
+  .container{
+    &.refer-page{
+      background: #fff;
+
+      .page-bg{
+        box-shadow: none;
+        padding: 30px 0 30px 0;
+      }
+
+      .row{
+        > div {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+      }
+    }
+  }
+
+  .refer-page{
+    padding-bottom: 20px;
+    .block-title{
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    .btn{
+      &.btn-share-round{
+        margin: 0 9px;
+        padding: 5px 0;
+      }
+    }
+  }
+
+  .circle-block{
+    margin-bottom: 0;
+  }
+
+  .page-wrapper{
+    background: #fff;
+  }
+}

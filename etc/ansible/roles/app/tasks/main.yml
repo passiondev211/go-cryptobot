@@ -1,0 +1,53 @@
+---
+- name: install go
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - go
+    - git
+
+- name: ensure GOPATH and other dirs exists
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - /go
+    - /go/src
+    - /go/bin
+    - /go/pkg
+    - /etc/cryptobot
+
+- name: pull app
+  git:
+    repo: git@bitbucket.org:theflowglobal/cryptobot.git
+    dest: /go/src/cryptobot
+    force: yes
+    accept_hostkey: yes
+    key_file: "{{ app_repo_key_file }}"
+
+- name: install app
+  command: go install
+  args:
+    chdir: /go/src/cryptobot
+  environment:
+    GOPATH: /go
+
+- name: copy app configuration
+  template:
+    src: config.json.j2
+    dest: /etc/cryptobot/config.json
+
+- name: copy systemd configuration
+  copy:
+    src: cryptobot.service
+    dest: /usr/lib/systemd/system/cryptobot.service
+
+- name: restart cryptobot
+  service:
+    name: cryptobot
+    state: restarted
+- name: ensure started
+  service:
+    name: cryptobot
+    state: restarted

@@ -1,0 +1,11 @@
+[Unit]
+Description=Cryptobot
+
+[Service]
+Type=simple
+ExecStart=/go/bin/cryptobot /etc/cryptobot/config.json
+; For migrations:
+WorkingDirectory=/go/src/cryptobot
+
+[Install]
+WantedBy=default.target

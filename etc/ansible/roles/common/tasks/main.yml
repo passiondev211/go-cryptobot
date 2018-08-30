@@ -1,0 +1,32 @@
+---
+- name: install epel-release
+  yum:
+    name: epel-release
+    state: present
+
+#- name: install packages
+#  yum:
+#    name: "{{ item }}"
+#    state: present
+#  with_items:
+#    - python-pip
+#    - gcc
+#    - python-devel
+#    - git
+#    - git
+#    - go
+#    - ntp
+
+#- name: ensure pip is the latest version
+#  command: pip install --upgrade pip
+
+# TODO: Add to autoload.
+#- name: ensure ntpd autoload
+#  service:
+#    name: ntpd
+#    state: enabled
+
+#- name: ensure ntpd
+#  service:
+#    name: ntpd
+#    state: started

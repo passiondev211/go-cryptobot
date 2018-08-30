@@ -1,0 +1,99 @@
+{
+  "$schema":"http://json-schema.org/draft-04/schema#",
+  "definitions":{
+    "rows":{
+      "type":"array",
+      "description": "Rates for currencies and trades info",
+      "items": {
+        "type": "object",
+        "properties":{
+          "currency":{
+            "type":"string",
+            "description": "Currency name"
+          },
+          "buyPrice":{
+            "type":"number",
+            "description": "Best price for buying"
+          },
+          "sellPrice":{
+            "type":"number",
+            "description": "Best price for selling"
+          },
+          "buyExchange":{
+            "type":"string",
+            "description": "Exchange name for buying"
+          },
+          "sellExchange":{
+            "type":"string",
+            "description": "Exchange name for selling"
+          },
+          "trade":{
+            "type":"object",
+            "description": "Trade info for current currency",
+            "properties":{
+              "expectedProfit": {
+                "type":"number",
+                "description": "Expected profit of trade calculated from buy and sell prices"
+              },
+              "actualProfit": {
+                "type":"number",
+                "description": "Actual profit of completed trade"
+              }
+            }
+          }
+        }
+      }
+    },
+    "newUserInfo":{
+      "required":[
+        "margin",
+        "profit",
+        "mode",
+        "leverage",
+        "balance"
+      ],
+      "description": "User-related information",
+      "properties":{
+        "balance":{
+          "type":"number",
+          "description": "Current user balance"
+        },
+        "margin":{
+          "type":"number",
+          "description": "Current user margin"
+        },
+        "profit":{
+          "type":"number",
+          "description": "Current user profit"
+        },
+        "mode":{
+          "type": "string",
+          "description": "Mode name, now available 'real' and 'demo'"
+        },
+        "botStarted":{
+          "type":"boolean",
+          "description": "Indicates that bot is working now"
+        },
+        "currentLeverageValue":{
+          "type":"integer",
+          "description": "Current user leverage value"
+        },
+        "nextLeverage":{
+          "description": "Next leverage level",
+          "properties":{
+            "minBalance":{
+              "type":"number",
+              "description": "Required total balance for next leverage level"
+            },
+            "value":{
+              "type":"integer",
+              "description": "Next leverage level value"
+            }
+          },
+          "type":"object"
+        }
+      },
+      "type":"object"
+    }
+  }
+}

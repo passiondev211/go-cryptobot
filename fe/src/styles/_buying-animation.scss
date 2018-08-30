@@ -1,0 +1,303 @@
+$time: 3;
+$circle-size: 60px;
+$inner-circle: #7FCAFC;
+$circle-color: #58BAFC;
+$titleColor: #0b3b5b;
+$descriptionColor: #717e9e;
+$coinSpeed: 1;
+$firstNum: 3;
+// Layuot
+.buying-container {
+    max-width: 500px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 150px;
+
+    @media (max-width: 575px) {
+        margin-top: 30px;
+    }
+
+    .counter-wrap {
+        max-width: 500px;
+        margin: auto;
+        position: relative;
+        left: -25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 575px) {
+            left: -20px;
+        }
+    }
+    .inner-fill {
+        fill: $inner-circle;
+    }
+    .counter {
+        position: relative;
+        display: flex;
+        margin: auto;
+        animation: buying-zoomIn $coinSpeed*0.6s;
+        &__number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -5px;
+
+            @media (max-width: 991px) {
+                margin-left: -10px;
+            }
+
+            span {
+                position: absolute; // content: '#{$firstNum + 3}';
+                font-family: $mainFont;
+                font-size: 16px;
+                color: #fff;
+                z-index: 10;
+                width: 20px;
+                height: 20px;
+                animation: buying-number $time+s;
+            }
+        }
+        &__border {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 3;
+            width: $circle-size;
+            height: $circle-size;
+            overflow: hidden;
+            left: 0;
+            &::after {
+                content: '';
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                position: absolute;
+                border-radius: 50%;
+                z-index: 3;
+                width: $circle-size - 10;
+                height: $circle-size - 10;
+                left: 4px;
+                top: 4px;
+                background: transparent;
+            }
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                background: $circle-color;
+                width: $circle-size;
+                height: $circle-size;
+                border-radius: 50%;
+                animation: buying-fill $time+s;
+                left: 0;
+                top: 0;
+            }
+        }
+        &__text {
+            margin-top: 25px;
+            overflow: hidden;
+        }
+        &__title {
+            color: $titleColor;
+            font-family: $mainFont;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            margin-bottom: 5px;
+            animation: buying-animationFrames linear $time + 1s;
+            animation-iteration-count: 1;
+            transform-origin: 50% 50%;
+            transform: translate3d(100%, 0, 0);
+            animation-fill-mode: forwards;
+        }
+        &__course {
+            color: $descriptionColor;
+            font-family: $mainFont;
+            font-size: 12px;
+            font-style: normal;
+            word-wrap: break-word;
+            font-weight: 500;
+            transform: translate3d(0, 0%, 0);
+            animation: buying-slideUp $coinSpeed*0.3s;
+        }
+    }
+    .coin {
+        &__svg {
+            animation: buying-coin $coinSpeed+s;
+            animation-iteration-count: $time;
+            animation-timing-function: cubic-bezier(0.6, 0.1, 0.59, 0.93);
+            transform: translate3d(100%, 0, 0);
+            .coin-tail {
+                stop-color: $inner-circle;
+            }
+            .main-color {
+                fill: $circle-color;
+            }
+            .second-color {
+                fill: $inner-circle;
+            }
+        }
+    }
+    // Animation styles
+    @keyframes buying-number {
+        0% {
+            content: '#{$firstNum}';
+        }
+        32% {
+            content: '#{$firstNum}';
+        }
+        33% {
+            content: '#{$firstNum + 1}';
+        }
+        65% {
+            content: '#{$firstNum + 1}';
+        }
+        66% {
+            content: '#{$firstNum + 2}';
+        }
+        98% {
+            content: '#{$firstNum + 2}';
+        }
+        99% {
+            content: '#{$firstNum + 3}';
+        }
+        100% {
+            content: '#{$firstNum + 3}';
+        }
+    }
+    @keyframes buying-slideLeft {
+        0% {
+            transform: translate3d(-50%, 0, 0);
+        }
+        100% {
+            transform: translate3d(0%, 0, 0);
+        }
+    }
+    @keyframes buying-zoomIn {
+        0% {
+            transform: scale(0.0);
+        }
+        80% {
+            transform: scale(1.3);
+        }
+        85% {
+            transform: scale(0.9);
+        }
+        90% {
+            transform: scale(1.1);
+        }
+        95% {
+            transform: scale(0.95);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    @keyframes buying-slideRight {
+        0% {
+            transform: translate3d(0%, 0, 0);
+        }
+        100% {
+            transform: translate3d(50%, 0, 0);
+        }
+    }
+    @keyframes buying-slideUp {
+        0% {
+            transform: translate3d(0, 100%, 0);
+        }
+        100% {
+            transform: translate3d(0, 0%, 0);
+        }
+    }
+    @keyframes buying-changeSize {
+        0% {
+            width: 100px;
+            height: 0px;
+        }
+        100% {
+            width: 60px;
+            height: 60px;
+        }
+    }
+    @keyframes buying-fill {
+        0% {
+            left: -100%;
+        }
+        32% {
+            left: -100%;
+        }
+        34% {
+            left: -66%;
+        }
+        36% {
+            left: -76%;
+        }
+        38% {
+            left: -70%;
+        }
+        64% {
+            left: -70%;
+        }
+        66% {
+            left: -33%;
+        }
+        68% {
+            left: -43%;
+        }
+        70% {
+            left: -37%;
+        }
+        93% {
+            left: -37%;
+        }
+        95% {
+            left: -0%;
+        }
+        97% {
+            left: -6%;
+        }
+        99% {
+            left: -2%;
+        }
+        100% {
+            left: 0%;
+        }
+    }
+    @keyframes buying-border {
+        0% {
+            width: 0;
+            height: 0;
+        }
+        100% {
+            width: 60px;
+            height: 60px;
+        }
+    }
+    @keyframes buying-coin {
+        from {
+            transform: translate3d(-200%, 0, 0);
+        }
+        to {
+            transform: translate3d(100%, 0, 0);
+        }
+    }
+    @keyframes buying-animationFrames {
+        0% {
+            transform: translate(-100%, 0px);
+            opacity: 0;
+        }
+        10% {
+            transform: translate(0%, 0px);
+            opacity: 1;
+        }
+        100% {
+            transform: translate(0%, 0px);
+        }
+    }
+}

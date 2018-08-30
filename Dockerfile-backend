@@ -1,0 +1,20 @@
+FROM node:8 as build_node
+
+COPY ./ /build
+WORKDIR /build/fe
+RUN npm install node-sass \
+    && npm install \
+    && npm run build
+
+
+FROM golang:1.9
+
+WORKDIR /go/src/cryptobot
+
+COPY . /go/src/cryptobot
+
+COPY --from=build_node /build/dist/ /go/src/cryptobot/dist
+
+EXPOSE 80
+
+ENTRYPOINT ["./entrypoint.sh"]

@@ -1,0 +1,42 @@
+.joyride-tooltip {
+  border: 1px solid $darkBlueColor;
+  color: $darkBlueColor;
+  border-radius: 15px;
+}
+
+.joyride-tooltip__header {
+  border-color: $darkBlueColor;
+  font-weight: bold;
+}
+
+.joyride-tooltip__header {
+  color: $darkBlueColor;
+}
+
+.joyride-tooltip__button--primary:active, .joyride-tooltip__button--primary:focus, .joyride-tooltip__button--primary:hover {
+  background: #f37544;
+}
+
+.joyride-tooltip__button--primary {
+  background: #f37544;
+  border-radius: 100px;
+  font-weight: bold;
+  padding: 10px 30px 8px;
+}
+
+.joyride-tooltip__button--secondary {
+  color: $darkBlueColor;
+  font-weight: bold;
+}
+
+.joyride-tooltip__button--skip {
+  color: $darkBlueColor;
+
+  font-weight: bold;
+  margin-top: 10px;
+}
+.tour-language-modal__content{
+  button{
+    margin-bottom: 5px;
+  }
+}

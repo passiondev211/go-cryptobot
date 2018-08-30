@@ -1,0 +1,35 @@
+version: "2.0"
+
+services:
+  tls:
+    image: abiosoft/caddy
+    depends_on:
+      - cryptobot
+    volumes:
+      - ./Caddyfile:/etc/Caddyfile
+      - ./dist:/frontend
+    ports:
+      - "8081:80"
+      - "8443:443"
+    restart: always
+  cryptobot:
+    image: golang:1.9
+    depends_on:
+      - db
+    volumes:
+      - .:/go/src/cryptobot
+    ports:
+      - "9512:9512"
+    working_dir: /go/src/cryptobot
+    command: go run main.go ./conf/config.json
+    restart: always
+  db:
+    image: percona:5.7
+    ports:
+      - "127.0.0.1:3307:3306"
+    environment:
+        - MYSQL_DATABASE=cryptobot_db
+        - MYSQL_USER=cryptobot_user
+        - MYSQL_PASSWORD=cryptobot_pass
+        - MYSQL_ROOT_PASSWORD=cryptobot_root
+    restart: always

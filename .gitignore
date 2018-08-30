@@ -1,0 +1,15 @@
+fe/node_modules
+fe/dist
+conf/config.json
+.DS_Store
+.idea/
+launch.json
+comments.txt
+tests/stress-test/debug
+cryptobot
+tests/crashlog*
+debug
+*.swp
+dist/
+.env
+log/

@@ -1,0 +1,460 @@
+.account-data {
+  &:first-child {
+    >.account-data__btn {
+      margin-right: 1px;
+    }
+  }
+  &__name {
+    font-weight: bold;
+    font-size: 15px;
+    color: #717E9E;
+  }
+  &__price {
+    font-weight: 500;
+    font-size: 24px;
+    white-space: nowrap;
+    white-space: pre;
+    &_border_bottom {
+      border-bottom: 1px solid $linesColor;
+    }
+  }
+  &__price-text {
+    font-weight: 300;
+  }
+  .bold {
+    font-weight: 500;
+  }
+  &__demo {
+    background: $lightGrey;
+    border-radius: 4px;
+    font-weight: 900;
+    font-size: 12px;
+    text-align: center;
+    color: $whiteColor;
+    padding: 3px 6px;
+  }
+  &__question {
+    background: $question-icon;
+    width: 13px;
+    height: 13px;
+    background-size: 13px;
+  }
+  &__price-btn {
+    border: none;
+    background-color: white;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    &_minus {
+      @include attachImage('/img/minus', 11px, 3px);
+      height: 10px;
+      background-position: center;
+    }
+    &_plus {
+      @include attachImage('/img/plus', 11px, 10px);
+    }
+  }
+}
+
+.profit {
+  &__text {
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    color: $lightColor;
+  }
+  &__count {
+    font-weight: 500;
+    font-size: 24px;
+    color: $blueColor;
+  }
+  &__circle {
+    border-radius: 100%;
+    overflow: hidden;
+    /* Ellipse */
+    background: rgba(232, 238, 241, 1);
+    background: -moz-linear-gradient(top, rgba(232, 238, 241, 1) 0%, rgba(249, 249, 249, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(232, 238, 241, 1)), color-stop(100%, rgba(249, 249, 249, 1)));
+    background: -webkit-linear-gradient(top, rgba(232, 238, 241, 1) 0%, rgba(249, 249, 249, 1) 100%);
+    background: -o-linear-gradient(top, rgba(232, 238, 241, 1) 0%, rgba(249, 249, 249, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(232, 238, 241, 1) 0%, rgba(249, 249, 249, 1) 100%);
+    background: linear-gradient(to bottom, rgba(232, 238, 241, 1) 0%, rgba(249, 249, 249, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8eef1', endColorstr='#f9f9f9', GradientType=0);
+  }
+  &__inside-circle {
+    border-radius: 100%;
+    background: $whiteColor;
+    position: relative;
+  }
+  &__indicator {
+    background-color: $blueColor;
+    transition: height 0.5s ease-out;
+    &_red {
+      background-color: $redColor;
+    }
+  }
+  &__margin-value {
+    font-family: $mainFont;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 22px;
+    color: $blueColor2;
+
+    &_red {
+      color: $redColor;
+    }
+  }
+  &__margin-label {
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    color: $lightColor;
+  }
+}
+
+.profit-block {
+  button {
+    font-family: $mainFont;
+  }
+
+  .leverage {
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    > .col-md {
+      order: 1;
+
+      &.text-sm-left,
+      &.text-sm-right {
+        text-align: center !important;
+      }
+    }
+  }
+
+  @media (max-width: 768px) and (min-width: 576px) {
+    > .col-md {
+      &:first-child {
+        order: 2;
+      }
+
+      &:nth-child(2) {
+        order: 3;
+      }
+    }
+  }
+
+  @media (max-width: 638px) {
+    > .col-md {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.profit-center {
+  h5 {
+    font-size: 14px;
+    color: #717e9e;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+}
+
+.profit-subheader {
+  color: #717e9e;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.badge-profit {
+  background: #a7becd;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  padding: 3px 6px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.progressbar-label {
+  top: 115px !important;
+}
+
+.tooltip-inner {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  max-width: 300px;
+  width: 300px;
+}
+
+.profit-currency {
+  font-weight: 200;
+}
+
+.earn-more{
+  font-weight: bold;
+  font-size: 18px;
+  color: $orangeColor;
+}
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}
+
+.increase_close {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  z-index: 1;
+  a {
+    display: block;
+    height: 27px;
+    width: 27px;
+    @include attachImage('/img/close_modal', 27px, 27px);
+  }
+}
+
+.increase_block {
+  background: #FFFFFF;
+  padding: 23px 0 185px 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+  .wrapper {
+      width: 700px;
+      padding: 0 40px 0 40px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      position: relative;
+
+      h2 {
+        font-size: 35px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.15;
+        letter-spacing: normal;
+        text-align: center;
+        color: #0b3b5b;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: #7b87a4;
+      }
+  }
+}
+
+.increase_list {
+  padding-top: 0;
+
+  .wrapper {
+      width: 760px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      position: relative;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -145px 12px 0 -28px;
+    padding-bottom: 62px;
+    position: relative;
+
+    li {
+      flex: 1 0 160px;
+      padding: 0 4px;
+      text-align: center;
+      list-style: none;
+
+      &:nth-child(2) {
+        header {
+          background: linear-gradient(45deg, #0d74ba, #1499d7);
+        }
+      }
+
+      &:nth-child(3) {
+        header {
+          background: linear-gradient(-45deg, #0d74ba, #1499d7);
+        }
+      }
+
+      header {
+        background: #1175BA;
+        color: #FFFFFF;
+        padding: 20px 10px 29px;
+
+        h6 {
+          padding-bottom: 10px;
+          font:  700 16px 'Corporative';
+          font-size: 18px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          text-transform: uppercase;
+          line-height: 1.22;
+          letter-spacing: 1.1px;
+          text-align: center;
+          color: #ffffff;
+        }
+
+        div {
+          font-family: corporative;
+          font-size: 40px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 0.9;
+          letter-spacing: normal;
+          text-align: center;
+          color: #ffffff;
+        }
+      }
+
+      footer {
+        position: relative;
+        border: 1px solid #dbd1d1;
+        padding: 12px 0 36px 0;
+        background: #ffffff;
+        font-size: 18px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: #595959;
+
+        p {
+          position: absolute;
+          bottom: -30px;
+          left: 9px;
+          background: #1175ba;
+          font: 300 14px 'Corporative';
+          color: #ffffff;
+          width: calc(100% - 18px);
+
+          font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2.2;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .invest-btn {
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+    width: 174px;
+    padding: 14px 0 36px;
+
+    a {
+      padding-top: 8px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .increase_block {
+    padding: 46px 10px 0 10px;
+
+    .wrapper {
+      width: 260px;
+      padding: 0;
+
+      h2 {
+        line-height: 52px;
+        margin-bottom: 22px;
+      }
+
+      p {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .increase_list {
+    padding: 0 10px 0 10px;
+
+    .wrapper {
+      width: 260px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      flex-direction: column;
+
+      li {
+        flex: 1;
+        padding: 6px 4px;
+        padding: 0 0 50px;
+
+        &:nth-child(2) {
+          header {
+            background: #1175BA;
+          }
+        }
+
+        &:nth-child(3) {
+          header {
+            background: #1175BA;
+          }
+        }
+
+        footer {
+          padding: 13px 0 50px 0;
+
+          p {
+            line-height: 40px;
+            font-size: 16px;
+            margin-bottom: 0;
+            bottom: -20px;
+          }
+        }
+
+        header {
+          padding: 20px 0 24px;
+
+          h6 {
+            padding-bottom: 19px;
+            font: 400 24px 'Corporative';
+            line-height: 1;
+            letter-spacing: 1.4px;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .invest-btn {
+      padding: 15px 0 32px;
+      width: 182px;
+    }
+  }
+
+  .increase_close {
+    right: calc(280px / 2);
+  }
+}

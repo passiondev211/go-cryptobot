@@ -1,0 +1,66 @@
+---
+- name: install packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-pip
+    - python-devel
+
+- name: install Percona yum repository
+  yum:
+    name: http://www.percona.com/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
+    state: present
+  notify: restart mysql
+
+- name: install Percona
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - Percona-Server-server-57
+    - Percona-Server-devel-57
+  notify: restart mysql
+
+- name: install the Python MySQLB module
+  pip:
+    name: MySQL-python
+
+- name: ensure MySQL is up-and-running
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+
+- shell: cat /var/log/mysqld.log | grep "temporary password" | grep -oE '[^ ]+$'
+  register: tmp_root_password
+
+- name: detect and properly set root password
+  stat:
+    path: /root/.my.cnf
+  register: r
+- mysql_user:
+    name: root
+    password: "{{ db_root_password }}"
+  when: r.stat.exists==True
+- name: Set new password from temporary password
+  shell: 'mysql -e "SET PASSWORD = PASSWORD(''{{ db_root_password }}'');" --connect-expired-password -uroot -p"{{ tmp_root_password.stdout }}"'
+  when: r.stat.exists==False
+
+# Now that the root password is set to the specified, make it default for the client.
+- name: copy my.cnf
+  template:
+    src: root_my.cnf.j2
+    dest: /root/.my.cnf
+    force: yes
+
+- mysql_user:
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    host: '%'
+    priv: "{{ db_database }}.*:ALL"
+    state: present
+
+- mysql_db:
+    name: "{{ db_database }}"
+    state: present

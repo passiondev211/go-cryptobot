@@ -1,0 +1,40 @@
+{
+  "buyingMinPercents": 97,
+  "buyingMaxPercents": 102,
+  "sellingMinPercents": 98,
+  "sellingMaxPercents": 103,
+
+  "maxTradesPerDay": 1000,
+  "maxMarginPerDay": 5,
+
+  "tableUpdateIntervalSeconds": 600,
+  "port": "9512",
+
+  "accessToken": "5G8AXoY8ASASm943ZQb9iDmp8EWEVuvB",
+  "sessionTokenTtlSeconds": 120,
+  "jwtSecret": "N7QCg3fz89YmtsbMzSkMuMDsmuJxZD32",
+  "jwtTokenTtlMinutes": 120,
+
+  "database" : {
+    "name": "{{ db_database }}",
+    "user": "{{ db_user }}",
+    "password": "{{ db_password }}",
+    "host": "{{ db_host }}",
+    "port": "{{ db_port }}"
+  },
+  "front_end": {
+    "volumePerTradeIncrementStep": 0.00001,
+    "apiTimeout": 5000,
+    "userInfoUpdateIntervalMS": 3000,
+    "ratesUpdateIntervalMinMS": 3000,
+    "ratesUpdateIntervalMaxMS": 5000,
+    "minAcceptableProfit": 1e-8,
+
+    "logoutRedirectPath": "https://google.com",
+    "depositRedirectPath": "https://google.com",
+    "firstLinkRedirectPath": "https://google.com",
+    "secondLinkRedirectPath": "https://google.com",
+    "firstLinkName": "Account",
+    "secondLinkName": "Change Password"
+  }
+}

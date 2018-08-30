@@ -1,0 +1,259 @@
+@media (max-width: 970px) {
+  .page-text {
+    padding: 38px 20px 0;
+    margin-bottom: 38px;
+    line-height: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .tour-language-modal__content {
+    width: 290px;
+  }
+
+  .trade-data-wrap .value .bdl1  {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  $minWidth: 480px;
+
+  // .header__user-menu {
+  //   display: none;
+  // }
+  // .burger-menu {
+  //   width: 24px;
+  //   height: 19px;
+  //   display: block;
+  //   margin-left: auto;
+  //   margin-right: 6%;
+  //   background-position-y: 0px;
+  //   background-size: 24px 19px;
+  // }
+  .user-panel {
+    width: 100%;
+    padding: 0 7.3%;
+    justify-content: center;
+    //display: -webkit-box;
+    //display: -ms-flexbox;
+    //display: flex;
+    //-webkit-box-orient: vertical;
+    //-webkit-box-direction: reverse;
+    //-ms-flex-direction: column-reverse;
+    //flex-direction: column-reverse;
+  }
+  .profit {
+    &__count {
+      font-size: 29px;
+      margin-top: 12px;
+    }
+    &__chart {
+      margin: 10px auto;
+    }
+    &__circle {
+      width: 188px;
+      height: 188px;
+      margin: auto;
+    }
+    &__inside-circle {
+      width: 168px;
+      height: 168px;
+    }
+    &__margin-value {
+      top: 80px;
+    }
+    &__margin-label {
+      font-size: 12px;
+      color: #6c757d;
+    }
+  }
+  .navigation__btn {
+    width: 33.3%;
+    font-size: 14px;
+    text-align: center;
+    &:first-child {
+      margin-left: 0;
+      text-align: center;
+    }
+    &:last-child {
+      margin-right: 0;
+      text-align: center;
+    }
+  }
+  .account-data__price_border_bottom {
+    border-bottom: none;
+  }
+  .page {
+    width: 100%;
+  }
+  .trades-page {
+    .page-title {
+      padding-top: 65px;
+      padding-left: 7%;
+    }
+    .trades-table th:first-child {
+      padding-left: 7%;
+      width: 150px;
+    }
+    .trades-table td:last-child {
+        padding-right: 31px;
+    }
+    tbody {
+      font-size: 14px;
+      td:first-child {
+        padding-left: 31px;
+      }
+      .currency-profit {
+        font-size: 14px;
+      }
+
+    }
+    .currency-date {
+      font-size: 12px !important;
+    }
+  }
+
+  .radar {
+    width: 140px;
+    height: 140px;
+    border-radius: 5em;
+    .line-1 {
+      height: 140px;
+      transform: translate(70px);
+    }
+    .line-2 {
+      height: 140px;
+      transform: translate(70px) rotate(90deg);
+    }
+    .circle-1 {
+      width: 130px;
+      height: 130px;
+      top: 5px;
+      left: 5px;
+    }
+    .circle-2 {
+      width: 116px;
+      height: 116px;
+      top: 12px;
+      left: 12px;
+    }
+    .circle-3 {
+      width: 102px;
+      height: 102px;
+      top: 19px;
+      left: 19px;
+    }
+    .circle-4 {
+      width: 88px;
+      height: 88px;
+      top: 26px;
+      left: 26px;
+    }
+    .title {
+      left: 38px;
+      top: 62px;
+    }
+    .arrow {
+      top: -20px;
+      left: -20px;
+    }
+    .target-1 {
+      bottom: 40px;
+      right: 60px;
+    }
+    .target-2 {
+      bottom: 74px;
+      left: 25px;
+    }
+    .target-3 {
+      bottom: 60px;
+      left: 42px;
+    }
+    .target-4 {
+      top: 23px;
+      right: 40px;
+    }
+    .target-5 {
+      top: 15px;
+      right: 61px;
+    }
+    .target-6 {
+      top: 85px;
+      right: 28px;
+    }
+    .target-7 {
+      top: 36px;
+      right: 96px;
+    }
+    .target-8 {
+      top: 59px;
+      right: 51px;
+    }
+    .target-9 {
+      top: 90px;
+      right: 52px;
+    }
+    .target-10 {
+      top: 64px;
+      right: 94px;
+    }
+    .big-dot {
+      width: 6px;
+      height: 6px;
+    }
+    .target {
+      width: 4px;
+      height: 4px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .navbar-brand,
+    .faq-link-wrapper {
+      margin: 0 !important;
+    }
+
+    .faq-link-wrapper {
+      .dropdown-item {
+        padding-left: .5em;
+        padding-right: .5em;
+      }
+    }
+  }
+
+  .card-body {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .trade-data-wrap {
+    .col:first-child {
+      padding-left: 0;
+    }
+    .col:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .trades-page {
+    tbody {
+      td {
+        &:first-child {
+          padding-left: 0 !important;
+          text-align: center;
+        }
+
+        .currency-name {
+          display: block;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

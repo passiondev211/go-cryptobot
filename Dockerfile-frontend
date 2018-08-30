@@ -1,0 +1,17 @@
+FROM node:8 as build_node
+
+COPY ./ /build
+WORKDIR /build/fe
+RUN npm install node-sass \
+    && npm install \
+    && npm run build
+
+
+
+
+FROM nginx:alpine
+
+COPY --from=build_node /build/dist/ /usr/share/nginx/html/
+
+
+

@@ -1,0 +1,45 @@
+{
+  "$schema":"http://json-schema.org/draft-04/schema#",
+  "definitions":{
+    "AppConfig":{
+      "type":"object",
+      "description": "Config settings for application",
+      "properties": {
+        "properties":{
+          "apiTimeout":{
+            "type":"integer",
+            "description": "Max timeout for requests to API"
+          },
+          "logoutRedirectPath":{
+            "type":"string",
+            "description": "Url for redirect after logout"
+          },
+          "depositRedirectPath":{
+            "type":"string",
+            "description": "Url for deposit page"
+          },
+          "invalidJwtRedirectPath":{
+            "type":"string",
+            "description": "Url for deposit page"
+          },
+          "firstLinkRedirectPath":{
+            "type":"string",
+            "description": "Url for first link"
+          },
+          "secondLinkRedirectPath":{
+            "type":"string",
+            "description": "Url for second link"
+          },
+          "firstLinkName":{
+            "type":"string",
+            "description": "Text for first link"
+          },
+          "secondLinkName":{
+            "type":"string",
+            "description": "Text for second link"
+          }
+        }
+      }
+    }
+  }
+}

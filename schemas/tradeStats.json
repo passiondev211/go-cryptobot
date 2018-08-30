@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "TradeStats": {
+      "description": "Trades stats for current user",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "date of stats"
+        },
+        "tradesCount": {
+          "type": "integer",
+          "description": "trades number per day"
+        },
+        "profitableRate": {
+          "type": "number",
+          "description": "% of trades with profit"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.rate-row {
+  width: 960px;
+  height: 210px;
+  background: linear-gradient(180deg, #FAFBFC 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF;
+  box-shadow: 0px 0px 30px #E4EAEF;
+  margin: auto;
+
+  &__currency-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: $darkColor;
+  }
+
+  &__currency-img {
+    @include attachImage('/img/currency_xrp', 18px, 18px);
+  }
+
+  &__info-action {
+    font-weight: bold;
+    font-size: 12px;
+    color: $lightColor;
+  }
+
+  &__info-exchange {
+    font-weight: 500;
+    font-size: 24px;
+    &_color{
+      &_red {
+        color: $redColor;
+      }
+      &_blue {
+        color: $blueColor;
+      }
+    }
+  }
+
+  &__info-price {
+    font-weight: 500;
+    font-size: 13px;
+
+    color: $darkColor;
+  }
+
+  &__first-column {
+    @include attachImage('/img/rate-row-bg');
+    background-position: bottom;
+    background-size: contain;
+    background-color: $whiteColor;
+  }
+
+  &__second-column {
+    background-color: $whiteColor;
+    text-align: center;
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(180deg, #FAFBFC 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF;
+    box-shadow: 0px 0px 30px #E4EAEF;
+  }
+
+  &__arrow {
+    @include attachImage('/img/arrow', 29px, 8px);
+  }
+}
+
