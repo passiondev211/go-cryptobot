@@ -422,9 +422,9 @@ func (s *Service) BatchTradesHandler() {
 						continue
 					}
 
-					trade.Profit = helper.Round(profit, 8)
+					trade.Profit = helper.Round(profit, 10)
 
-					finalBalance := user.Balance - trade.Profit
+					finalBalance := user.Balance + trade.Profit
 					if finalBalance < s.MinBalance {
 						tradeLog.BelowMinBalanceUsers++
 						continue
